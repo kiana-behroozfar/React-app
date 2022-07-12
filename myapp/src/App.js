@@ -23,9 +23,12 @@ import {
   Ecommerce
 } from "./pages";
 
+import { useStateContext } from './cpntexts/ContextProvider';
+
 const App = () => {
 
-const activeMenu = true;
+const {activeMenu} = useStateContext();
+
 
   return (
     <div>
@@ -57,7 +60,7 @@ const activeMenu = true;
             }`}
           >
             <div className="fixed md:static bg-main-bg dark:bg-main-dark-bg navbar w-full">
-              {/* <Navbar /> */}
+              <Navbar />
             </div>
           </div>
 
