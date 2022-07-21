@@ -108,7 +108,7 @@ const Ecommerce = () => {
 
 
 
-            
+
               
             <div className='mt-10'>
             <Button
@@ -119,6 +119,8 @@ const Ecommerce = () => {
             />
             </div>
             </div>
+
+            <Stacked width="320px" height="360px"/>
             </div>
 
         </div>
