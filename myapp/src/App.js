@@ -27,7 +27,7 @@ import { useStateContext } from './cpntexts/ContextProvider';
 
 const App = () => {
 
-const {activeMenu} = useStateContext();
+const {activeMenu,themeSettings,setThemeSettings} = useStateContext();
 
 
   return (
@@ -39,6 +39,7 @@ const {activeMenu} = useStateContext();
               <button
                 type="button"
                 className="text-3xl p-3 hover:drop-shadow-xl hover:bg-light-gray text-white"
+                onClick={()=> setThemeSettings(true)}
                 style={{ background: "blue", borderRadius: "50%" }}
               >
                 <FiSettings />
@@ -66,7 +67,7 @@ const {activeMenu} = useStateContext();
             <div>
 
 
-              <ThemeSettings/>
+             {themeSettings &&  <ThemeSettings/>}
               <Routes>
                 {/* Dashboard */}
                 <Route path="/" element={<Ecommerce />} />
