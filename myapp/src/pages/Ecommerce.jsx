@@ -7,6 +7,7 @@ import { earningData , SparklineAreaData } from '../data/dummy';
 import { useStateContext } from '../cpntexts/ContextProvider';
 
 const Ecommerce = () => {
+  const {currentColor} =useStateContext();
   return (
     <div className="mt-12">
       <div className="flex flex-wrap lg:flex-nowrap justify-center">
@@ -20,7 +21,7 @@ const Ecommerce = () => {
           <div className="mt-6">
             <Button
               color="white"
-              bgColor="blue"
+              bgColor={currentColor}
               text="Download"
               borderRadius=" 10px"
               size="md"
@@ -61,68 +62,63 @@ const Ecommerce = () => {
               className="
               flex items-center gap-4"
             >
-              <p className='flex items-center gap-2 text-gray-600 hover:drop-shadow-xl '>
+              <p className="flex items-center gap-2 text-gray-600 hover:drop-shadow-xl ">
                 <span>
                   <GoArrowDown />
                 </span>
-                <span>Expensive</span> 
+                <span>Expensive</span>
               </p>
-              <p className='flex items-center gap-2 text-green-400 hover:drop-shadow-xl '>
+              <p className="flex items-center gap-2 text-green-400 hover:drop-shadow-xl ">
                 <span>
                   <GoArrowDown />
                 </span>
-                <span>Budget</span> 
+                <span>Budget</span>
               </p>
             </div>
           </div>
 
-            <div className='mt-10 flex gap-10 flex-wrap justify-center'>
-            <div className='border-r-1 border-color m-4 pr-10'>
+          <div className="mt-10 flex gap-10 flex-wrap justify-center">
+            <div className="border-r-1 border-color m-4 pr-10">
               <div>
                 <p>
-                  <span className='text-3xl font-semibold'> $93,438</span>
-                  <span className='p-1.5 hover:drop-shadow-xl cursor-pointer rounded-full text-white bg-green-400 ml-3 text-xs'>23%</span>
+                  <span className="text-3xl font-semibold"> $93,438</span>
+                  <span className="p-1.5 hover:drop-shadow-xl cursor-pointer rounded-full text-white bg-green-400 ml-3 text-xs">
+                    23%
+                  </span>
                 </p>
-                <p className='text-gray-500 mt-1'>Budget</p>
+                <p className="text-gray-500 mt-1">Budget</p>
               </div>
-              <div className='mt-8'>
+              <div className="mt-8">
                 <p>
-                  <span className='text-3xl font-semibold'> $48,438</span>
+                  <span className="text-3xl font-semibold"> $48,438</span>
                 </p>
-                <p className='text-gray-500 mt-1'>Expense</p>
+                <p className="text-gray-500 mt-1">Expense</p>
               </div>
-{/* 
-            <div className='mt-5'>
-            <SparkLine
-            currentColor="blue"
-            id="line-sparkline"
-            type="Line"
-            height="80px"
-            width="250px"
-            data={SparklineAreaData}
-            color="blue"
-/>
-            </div> */}
 
+              <div className="mt-5">
+                <SparkLine
+                  currentColor={currentColor}
+                  id="line-sparkline"
+                  type="Line"
+                  height="80px"
+                  width="250px"
+                  data={SparklineAreaData}
+                  color={currentColor}
+                />
+              </div>
 
-
-
-
-
-              
-            <div className='mt-10'>
-            <Button
-            color="white"
-            bgColor="blue"
-            text="Download Report"
-            borderRadius="12px"
-            />
-            </div>
+              <div className="mt-10">
+                <Button
+                  color="white"
+                  bgColor={currentColor}
+                  text="Download Report"
+                  borderRadius="12px"
+                />
+              </div>
             </div>
 
-            <Stacked width="320px" height="360px"/>
-            </div>
-
+            <Stacked width="320px" height="360px" />
+          </div>
         </div>
       </div>
     </div>
