@@ -39,7 +39,7 @@ if(screenSize <= 900) {
 }else{
   setActiveMenu(true)
 }
-},[setActiveMenu])
+},[screenSize,setActiveMenu])
 
 
   return (
