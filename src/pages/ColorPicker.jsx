@@ -4,7 +4,7 @@ import{Header} from '../components';
 
 const change =(args) => {
   document.getElementById("preview").style.backgroundColor = args.currentValue.hex
-  change={change};
+
 }
 
 
@@ -45,4 +45,4 @@ const ColorPicker = () => {
   )
 }
 
-export default ColorPicker
+export default ColorPicker;

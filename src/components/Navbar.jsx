@@ -7,7 +7,7 @@ import { MdKeyboardArrowDown } from 'react-icons/md'
 import { TooltipComponent } from '@syncfusion/ej2-react-popups'
 
 import avatar from '../data/avatar.jpg'
-import {Cart , Chat,Notification , UseProfile, UserProfile} from '.';
+import {Cart , Chat,Notification , UserProfile} from '.';
 import { useStateContext } from '../cpntexts/ContextProvider'
 
 const NavButton = ({title,customFunc , icon , color, dotColor}) => (
@@ -22,16 +22,16 @@ const NavButton = ({title,customFunc , icon , color, dotColor}) => (
 
 
 const Navbar = () => {
-  const {activeMenu , setActiveMenu,isClicked,setIsClicked,handleClick,screenSize,setScreenSize,currentColor} = useStateContext();
+  const { setActiveMenu,isClicked,handleClick,screenSize,setScreenSize,currentColor} = useStateContext();
 
 useEffect(() => {
-const handleResize = () => setScreenSize(window.innerWidth)
-window.addEventListener('resize', handleResize)
+  const handleResize = () => setScreenSize(window.innerWidth);
+  window.addEventListener("resize", handleResize);
 
-handleResize();
+  handleResize();
 
-return () => window.removeEventListener('resize',handleResize)
-},[]);
+  return () => window.removeEventListener("resize", handleResize);
+}, [setScreenSize]);
 
 useEffect(() => {
 if(screenSize <= 900) {
@@ -39,7 +39,7 @@ if(screenSize <= 900) {
 }else{
   setActiveMenu(true)
 }
-},[screenSize])
+},[setActiveMenu])
 
 
   return (
@@ -77,7 +77,7 @@ if(screenSize <= 900) {
             className="flex items-center gap-2 cursor-pointer p-1 hover:bg-light-gray rounded-lg"
             onClick={() => handleClick("userProfile")}
           >
-            <img className="rounded-full w-8 h-8" src={avatar} />
+            <img className="rounded-full w-8 h-8" src={avatar} alt='-'/>
             <p>
               <span className="text-gray-400 text-14">Hi,</span>{" "}
               <span className="text-gray-400 font-bold ml-1 text-14">

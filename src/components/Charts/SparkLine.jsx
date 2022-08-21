@@ -7,7 +7,8 @@ import {
 
 class SparkLine extends React.PureComponent {
   render() {
-    const { id, height, width, color, data, type, currentColor } = this.props;
+    const { id, height, width, color, data, type, currentColor, x, yval } =
+      this.props;
 
     return (
       <SparklineComponent
@@ -20,7 +21,7 @@ class SparkLine extends React.PureComponent {
         border={{ color: currentColor, width: 2 }}
         tooltipSettings={{
           visible: true,
-          format: "${x} : data ${yval}",
+          format: `${x} : data ${yval}`,
           trackLineSettings: {
             visible: true,
           },
